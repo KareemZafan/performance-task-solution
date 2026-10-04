@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Level 4 - Level 3 dummy journey + Backend Listener streaming to InfluxDB 2.x (no real network calls) for distributed master/slave demos.
+  Plugins needed on EVERY node: jpgc-casutg (Concurrency Thread Group) + jpgc-dummy (Dummy Sampler)
+  Register -> Login -> Get Profile -> random( Logout | Delete Profile )
+-->
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="L4 - Monitored Dummy Journey (InfluxDB + Grafana)">
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+    </TestPlan>
+    <hashTree>
+      <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener - InfluxDB 2.x (live metrics)">
+        <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="influxdbMetricsSender" elementType="Argument">
+              <stringProp name="Argument.name">influxdbMetricsSender</stringProp>
+              <stringProp name="Argument.value">org.apache.jmeter.visualizers.backend.influxdb.HttpMetricsSender</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="influxdbUrl" elementType="Argument">
+              <stringProp name="Argument.name">influxdbUrl</stringProp>
+              <stringProp name="Argument.value">${__P(influx.url,http://localhost:8086/api/v2/write?org=perf&amp;bucket=jmeter)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="influxdbToken" elementType="Argument">
+              <stringProp name="Argument.name">influxdbToken</stringProp>
+              <stringProp name="Argument.value">${__P(influx.token,jmeter-local-dev-token)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="application" elementType="Argument">
+              <stringProp name="Argument.name">application</stringProp>
+              <stringProp name="Argument.value">${__P(app.name,reqres-dummy)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="measurement" elementType="Argument">
+              <stringProp name="Argument.name">measurement</stringProp>
+              <stringProp name="Argument.value">jmeter</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="summaryOnly" elementType="Argument">
+              <stringProp name="Argument.name">summaryOnly</stringProp>
+              <stringProp name="Argument.value">false</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="samplersRegex" elementType="Argument">
+              <stringProp name="Argument.name">samplersRegex</stringProp>
+              <stringProp name="Argument.value">.*</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="percentiles" elementType="Argument">
+              <stringProp name="Argument.name">percentiles</stringProp>
+              <stringProp name="Argument.value">50;90;95;99</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="testTitle" elementType="Argument">
+              <stringProp name="Argument.name">testTitle</stringProp>
+              <stringProp name="Argument.value">${__P(test.title,Level4 Monitoring Demo)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="eventTags" elementType="Argument">
+              <stringProp name="Argument.name">eventTags</stringProp>
+              <stringProp name="Argument.value">level=4</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </elementProp>
+        <stringProp name="classname">org.apache.jmeter.visualizers.backend.influxdb.InfluxdbBackendListenerClient</stringProp>
+        <stringProp name="QUEUE_SIZE">5000</stringProp>
+      </BackendListener>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set - registration users">
+        <stringProp name="filename">${__P(users.csv,data/users.csv)}</stringProp>
+        <stringProp name="fileEncoding">UTF-8</stringProp>
+        <stringProp name="variableNames">email,password</stringProp>
+        <boolProp name="ignoreFirstLine">true</boolProp>
+        <stringProp name="delimiter">,</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroup guiclass="com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroupGui" testclass="com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroup" testname="CTG - 10 users / 30 s ramp / 5 steps">
+        <elementProp name="ThreadGroup.main_controller" elementType="com.blazemeter.jmeter.control.VirtualUserController"/>
+        <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
+        <stringProp name="TargetLevel">${__P(users,10)}</stringProp>
+        <stringProp name="RampUp">${__P(rampup,30)}</stringProp>
+        <stringProp name="Steps">${__P(steps,5)}</stringProp>
+        <stringProp name="Hold">${__P(hold,60)}</stringProp>
+        <stringProp name="LogFilename"></stringProp>
+        <stringProp name="Iterations">${__P(iterations,)}</stringProp>
+        <stringProp name="Unit">S</stringProp>
+      </com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroup>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TX00 Reqres User Journey">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <!-- ===== 1. Register ===== -->
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="TX01 Register">
+            <boolProp name="WAITING">true</boolProp>
+            <boolProp name="SUCCESFULL">true</boolProp>
+            <stringProp name="RESPONSE_CODE">200</stringProp>
+            <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+            <stringProp name="REQUEST_DATA">POST /api/register {&quot;email&quot;:&quot;${email}&quot;,&quot;password&quot;:&quot;${password}&quot;}</stringProp>
+            <stringProp name="RESPONSE_DATA">{&quot;id&quot;:${__Random(1,12)},&quot;token&quot;:&quot;QpwL5tke4Pnpja7X${__Random(1,12)}&quot;}</stringProp>
+            <stringProp name="RESPONSE_TIME">${__Random(150,450)}</stringProp>
+            <stringProp name="LATENCY">${__Random(5,40)}</stringProp>
+            <stringProp name="CONNECT">${__Random(1,10)}</stringProp>
+            <stringProp name="URL">https://reqres.in/simulated</stringProp>
+            <stringProp name="RESULT_CLASS">org.apache.jmeter.samplers.SampleResult</stringProp>
+          </kg.apc.jmeter.samplers.DummySampler>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="RA - HTTP 200">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message">Register must return 200</stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">8</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor - registeredId">
+              <stringProp name="JSONPostProcessor.referenceNames">registeredId</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.id</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+
+          <!-- ===== 2. Login (same CSV row) ===== -->
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="TX02 Login">
+            <boolProp name="WAITING">true</boolProp>
+            <boolProp name="SUCCESFULL">true</boolProp>
+            <stringProp name="RESPONSE_CODE">200</stringProp>
+            <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+            <stringProp name="REQUEST_DATA">POST /api/login {&quot;email&quot;:&quot;${email}&quot;,&quot;password&quot;:&quot;${password}&quot;}</stringProp>
+            <stringProp name="RESPONSE_DATA">{&quot;token&quot;:&quot;QpwL5tke4Pnpja7X4&quot;}</stringProp>
+            <stringProp name="RESPONSE_TIME">${__Random(150,600)}</stringProp>
+            <stringProp name="LATENCY">${__Random(5,40)}</stringProp>
+            <stringProp name="CONNECT">${__Random(1,10)}</stringProp>
+            <stringProp name="URL">https://reqres.in/simulated</stringProp>
+            <stringProp name="RESULT_CLASS">org.apache.jmeter.samplers.SampleResult</stringProp>
+          </kg.apc.jmeter.samplers.DummySampler>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="RA - HTTP 200">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message">Login must return 200</stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">8</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor - token">
+              <stringProp name="JSONPostProcessor.referenceNames">token</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.token</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+
+          <!-- ===== 3. Get Profile ===== -->
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="TX03 Get Profile">
+            <boolProp name="WAITING">true</boolProp>
+            <boolProp name="SUCCESFULL">true</boolProp>
+            <stringProp name="RESPONSE_CODE">200</stringProp>
+            <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+            <stringProp name="REQUEST_DATA">GET /api/users/${registeredId}</stringProp>
+            <stringProp name="RESPONSE_DATA">{&quot;data&quot;:{&quot;id&quot;:${registeredId},&quot;email&quot;:&quot;${email}&quot;,&quot;first_name&quot;:&quot;Perf&quot;}}</stringProp>
+            <stringProp name="RESPONSE_TIME">${__Random(80,300)}</stringProp>
+            <stringProp name="LATENCY">${__Random(5,40)}</stringProp>
+            <stringProp name="CONNECT">${__Random(1,10)}</stringProp>
+            <stringProp name="URL">https://reqres.in/simulated</stringProp>
+            <stringProp name="RESULT_CLASS">org.apache.jmeter.samplers.SampleResult</stringProp>
+          </kg.apc.jmeter.samplers.DummySampler>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="RA - HTTP 200">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message">Get Profile must return 200</stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">8</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor - userId &amp; profileEmail">
+              <stringProp name="JSONPostProcessor.referenceNames">userId;profileEmail</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.id;$.data.email</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1;1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND;NOT_FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="RA - Profile email equals CSV email">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="0">${email}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message">Profile email does not match the email used to register (from CSV)</stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">8</intProp>
+              <stringProp name="Assertion.scope">variable</stringProp>
+              <stringProp name="Scope.variable">profileEmail</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+
+          <!-- ===== 4. Random branch: Logout OR Delete ===== -->
+          <RandomController guiclass="RandomControlGui" testclass="RandomController" testname="Random Controller - Logout OR Delete">
+            <intProp name="InterleaveControl.style">1</intProp>
+          </RandomController>
+          <hashTree>
+            <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="TX04a Logout">
+            <boolProp name="WAITING">true</boolProp>
+            <boolProp name="SUCCESFULL">true</boolProp>
+            <stringProp name="RESPONSE_CODE">201</stringProp>
+            <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+            <stringProp name="REQUEST_DATA">POST /api/users/${userId}</stringProp>
+            <stringProp name="RESPONSE_DATA">{&quot;action&quot;:&quot;logout&quot;,&quot;id&quot;:&quot;${__Random(100,999)}&quot;}</stringProp>
+            <stringProp name="RESPONSE_TIME">${__Random(80,250)}</stringProp>
+            <stringProp name="LATENCY">${__Random(5,40)}</stringProp>
+            <stringProp name="CONNECT">${__Random(1,10)}</stringProp>
+            <stringProp name="URL">https://reqres.in/simulated</stringProp>
+            <stringProp name="RESULT_CLASS">org.apache.jmeter.samplers.SampleResult</stringProp>
+          </kg.apc.jmeter.samplers.DummySampler>
+            <hashTree>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="RA - HTTP 201 (reqres answers POST with Created)">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="49587">201</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message">POST /api/users/{id} returns 201 Created on reqres</stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 - append logged-out userId to CSV">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">// Only record users that really reached (and passed) the Logout API.
+if (!prev.isSuccessful()) return
+
+// {host} placeholder -&gt; one file per load generator (two slaves must never share one file)
+String path = props.getProperty(&quot;logout.file&quot;, &quot;results/logout_users_{host}.csv&quot;)
+        .replace(&quot;{host}&quot;, java.net.InetAddress.getLocalHost().getHostName())
+File f = new File(path)
+String line = [vars.get(&quot;userId&quot;), vars.get(&quot;email&quot;), ctx.getThread().getThreadName(),
+               new Date().format(&quot;yyyy-MM-dd&apos;T&apos;HH:mm:ss.SSS&quot;)].join(&quot;,&quot;) + &quot;\n&quot;
+
+// Many threads write to the same file: serialize the writes on one JVM-wide lock,
+// otherwise lines from two threads can interleave and corrupt the CSV.
+synchronized (org.apache.jmeter.util.JMeterUtils.class) {
+    if (!f.exists()) {
+        f.getAbsoluteFile().getParentFile().mkdirs()
+        f.append(&quot;userId,email,threadName,timestamp\n&quot;)
+    }
+    f.append(line)
+}</stringProp>
+              </JSR223PostProcessor>
+              <hashTree/>
+            </hashTree>
+            <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="TX04b Delete Profile">
+            <boolProp name="WAITING">true</boolProp>
+            <boolProp name="SUCCESFULL">true</boolProp>
+            <stringProp name="RESPONSE_CODE">204</stringProp>
+            <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+            <stringProp name="REQUEST_DATA">DELETE /api/users/${userId}</stringProp>
+            <stringProp name="RESPONSE_DATA"></stringProp>
+            <stringProp name="RESPONSE_TIME">${__Random(80,250)}</stringProp>
+            <stringProp name="LATENCY">${__Random(5,40)}</stringProp>
+            <stringProp name="CONNECT">${__Random(1,10)}</stringProp>
+            <stringProp name="URL">https://reqres.in/simulated</stringProp>
+            <stringProp name="RESULT_CLASS">org.apache.jmeter.samplers.SampleResult</stringProp>
+          </kg.apc.jmeter.samplers.DummySampler>
+            <hashTree>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="RA - HTTP 204 (No Content is the success code for DELETE)">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="49590">204</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message">DELETE /api/users/{id} returns 204 No Content on reqres</stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+
+        <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer 1-3 s">
+          <stringProp name="ConstantTimer.delay">${__P(think.min,1000)}</stringProp>
+          <stringProp name="RandomTimer.range">${__P(think.range,2000)}</stringProp>
+        </UniformRandomTimer>
+        <hashTree/>
+
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree - request/response body log">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time><latency>true</latency><timestamp>true</timestamp><success>true</success><label>true</label><code>true</code><message>true</message><threadName>true</threadName><dataType>true</dataType><encoding>true</encoding><assertions>true</assertions><subresults>true</subresults><responseData>true</responseData><samplerData>true</samplerData><xml>true</xml><fieldNames>true</fieldNames><responseHeaders>true</responseHeaders><requestHeaders>true</requestHeaders><responseDataOnError>false</responseDataOnError><saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage><assertionsResultsToSave>0</assertionsResultsToSave><bytes>true</bytes><sentBytes>true</sentBytes><url>true</url><threadCounts>true</threadCounts><idleTime>true</idleTime><connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">${__P(vrt.file,results/request_response_log_${__machineName}.xml)}</stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

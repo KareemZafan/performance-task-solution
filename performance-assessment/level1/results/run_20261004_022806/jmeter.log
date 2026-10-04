@@ -1,0 +1,447 @@
+2026-10-04 02:28:07,245 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2026-10-04 02:28:07,258 INFO o.a.j.JMeter: Loading user properties from: /Users/kareem_mohamed/tools/apache-jmeter-5.6.3/bin/user.properties
+2026-10-04 02:28:07,258 INFO o.a.j.JMeter: Loading system properties from: /Users/kareem_mohamed/tools/apache-jmeter-5.6.3/bin/system.properties
+2026-10-04 02:28:07,258 INFO o.a.j.JMeter: Loading additional properties from: ../tools/report.properties
+2026-10-04 02:28:07,258 INFO o.a.j.JMeter: Setting JMeter property: results.dir=/Users/kareem_mohamed/Desktop/apis/performance-assessment/level1/results/run_20261004_022806
+2026-10-04 02:28:07,261 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2026-10-04 02:28:07,261 INFO o.a.j.JMeter: Version 5.6.3
+2026-10-04 02:28:07,261 INFO o.a.j.JMeter: java.version=17.0.14
+2026-10-04 02:28:07,261 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2026-10-04 02:28:07,261 INFO o.a.j.JMeter: os.name=Mac OS X
+2026-10-04 02:28:07,261 INFO o.a.j.JMeter: os.arch=aarch64
+2026-10-04 02:28:07,261 INFO o.a.j.JMeter: os.version=26.6.2
+2026-10-04 02:28:07,261 INFO o.a.j.JMeter: file.encoding=UTF-8
+2026-10-04 02:28:07,261 INFO o.a.j.JMeter: java.awt.headless=true
+2026-10-04 02:28:07,261 INFO o.a.j.JMeter: Max memory     =1073741824
+2026-10-04 02:28:07,261 INFO o.a.j.JMeter: Available Processors =12
+2026-10-04 02:28:07,264 INFO o.a.j.JMeter: Default Locale=English (EN)
+2026-10-04 02:28:07,264 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2026-10-04 02:28:07,264 INFO o.a.j.JMeter: JMeterHome=/Users/kareem_mohamed/tools/apache-jmeter-5.6.3
+2026-10-04 02:28:07,264 INFO o.a.j.JMeter: user.dir  =/Users/kareem_mohamed/Desktop/apis/performance-assessment/level1
+2026-10-04 02:28:07,264 INFO o.a.j.JMeter: PWD       =/Users/kareem_mohamed/Desktop/apis/performance-assessment/level1
+2026-10-04 02:28:07,271 INFO o.a.j.JMeter: IP: 192.168.1.110 Name: Mac FullName: 192.168.1.110
+2026-10-04 02:28:07,278 INFO o.a.j.s.FileServer: Default base='/Users/kareem_mohamed/Desktop/apis/performance-assessment/level1'
+2026-10-04 02:28:07,279 INFO o.a.j.s.FileServer: Set new base='/Users/kareem_mohamed/Desktop/apis/performance-assessment/level1'
+2026-10-04 02:28:07,339 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2026-10-04 02:28:07,350 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2026-10-04 02:28:07,351 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2026-10-04 02:28:07,352 INFO o.a.j.s.SaveService: Loading file: L1_FakeStore_Journey.jmx
+2026-10-04 02:28:07,374 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-10-04 02:28:07,374 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-10-04 02:28:07,374 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-10-04 02:28:07,374 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-10-04 02:28:07,375 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2026-10-04 02:28:07,375 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2026-10-04 02:28:07,402 INFO o.a.j.JMeter: Creating summariser <summary>
+2026-10-04 02:28:07,406 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2026-10-04 02:28:07,407 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-10-04 02:28:07,407 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-10-04 02:28:07,408 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2026-10-04 02:28:07,408 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2026-10-04 02:28:07,423 INFO o.a.j.r.ClassFinder: Will scan jar /Users/kareem_mohamed/tools/apache-jmeter-5.6.3/lib/ext/jmeter-plugins-dummy-0.4.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.functions.Function], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2026-10-04 02:28:07,425 INFO o.a.j.r.ClassFinder: Will scan jar /Users/kareem_mohamed/tools/apache-jmeter-5.6.3/lib/ext/jmeter-plugins-casutg-3.1.1.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.functions.Function], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2026-10-04 02:28:07,429 INFO o.a.j.r.ClassFinder: Will scan jar /Users/kareem_mohamed/tools/apache-jmeter-5.6.3/lib/ext/jmeter-plugins-manager-1.10.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.functions.Function], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2026-10-04 02:28:07,532 INFO o.a.j.JMeter: Running test (1791070087532)
+2026-10-04 02:28:07,541 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : TG01 - Baseline (1 user)
+2026-10-04 02:28:07,541 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group TG01 - Baseline (1 user).
+2026-10-04 02:28:07,541 INFO o.a.j.e.StandardJMeterEngine: Thread will start next loop on error
+2026-10-04 02:28:07,541 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2026-10-04 02:28:07,542 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2026-10-04 02:28:07,542 INFO o.a.j.e.StandardJMeterEngine: Waiting for thread group: TG01 - Baseline (1 user) to finish before starting next group
+2026-10-04 02:28:07,543 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2026-10-04 02:28:07,543 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2026-10-04 02:28:07,543 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2026-10-04 02:28:07,543 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2026-10-04 02:28:07,544 INFO o.a.j.t.JMeterThread: Thread started: TG01 - Baseline (1 user) 1-1
+2026-10-04 02:28:09,799 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = Mac
+2026-10-04 02:28:09,801 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2026-10-04 02:28:09,907 INFO o.a.j.p.h.s.h.LazyLayeredConnectionSocketFactory: Setting up HTTPS TrustAll Socket Factory
+2026-10-04 02:28:09,910 INFO o.a.j.u.JsseSSLManager: Using default SSL protocol: TLS
+2026-10-04 02:28:09,910 INFO o.a.j.u.JsseSSLManager: SSL session context: per-thread
+2026-10-04 02:28:10,031 INFO o.a.j.u.SSLManager: JmeterKeyStore Location:  type JKS
+2026-10-04 02:28:10,033 INFO o.a.j.u.SSLManager: KeyStore created OK
+2026-10-04 02:28:10,033 WARN o.a.j.u.SSLManager: Keystore file not found, loading empty keystore
+2026-10-04 02:28:30,033 INFO o.a.j.r.Summariser: summary +      1 in 00:00:23 =    0.0/s Avg: 19958 Min: 19958 Max: 19958 Err:     1 (100.00%) Active: 1 Started: 1 Finished: 0
+2026-10-04 02:35:34,566 INFO o.a.j.r.Summariser: summary +     19 in 00:07:05 =    0.0/s Avg: 19856 Min: 19333 Max: 22118 Err:    19 (100.00%) Active: 1 Started: 1 Finished: 0
+2026-10-04 02:35:34,568 INFO o.a.j.r.Summariser: summary =     20 in 00:07:27 =    0.0/s Avg: 19861 Min: 19333 Max: 22118 Err:    20 (100.00%)
+2026-10-04 02:35:34,569 INFO o.a.j.t.JMeterThread: Thread is done: TG01 - Baseline (1 user) 1-1
+2026-10-04 02:35:34,569 INFO o.a.j.t.JMeterThread: Thread finished: TG01 - Baseline (1 user) 1-1
+2026-10-04 02:35:34,571 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 2 : TG02 - Load (120 users, 60s ramp)
+2026-10-04 02:35:34,571 INFO o.a.j.e.StandardJMeterEngine: Starting 120 threads for group TG02 - Load (120 users, 60s ramp).
+2026-10-04 02:35:34,571 INFO o.a.j.e.StandardJMeterEngine: Thread will start next loop on error
+2026-10-04 02:35:34,572 INFO o.a.j.t.ThreadGroup: Starting thread group... number=2 threads=120 ramp-up=60 delayedStart=false
+2026-10-04 02:35:34,573 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-1
+2026-10-04 02:35:34,608 INFO o.a.j.t.ThreadGroup: Started thread group number 2
+2026-10-04 02:35:34,608 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2026-10-04 02:35:35,078 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-2
+2026-10-04 02:35:35,574 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-3
+2026-10-04 02:35:36,078 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-4
+2026-10-04 02:35:36,579 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-5
+2026-10-04 02:35:37,077 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-6
+2026-10-04 02:35:37,574 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-7
+2026-10-04 02:35:38,077 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-8
+2026-10-04 02:35:38,573 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-9
+2026-10-04 02:35:39,079 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-10
+2026-10-04 02:35:39,579 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-11
+2026-10-04 02:35:40,074 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-12
+2026-10-04 02:35:40,575 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-13
+2026-10-04 02:35:41,078 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-14
+2026-10-04 02:35:41,577 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-15
+2026-10-04 02:35:42,075 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-16
+2026-10-04 02:35:42,576 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-17
+2026-10-04 02:35:43,078 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-18
+2026-10-04 02:35:43,577 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-19
+2026-10-04 02:35:44,075 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-20
+2026-10-04 02:35:44,576 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-21
+2026-10-04 02:35:45,076 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-22
+2026-10-04 02:35:45,576 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-23
+2026-10-04 02:35:46,076 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-24
+2026-10-04 02:35:46,575 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-25
+2026-10-04 02:35:47,078 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-26
+2026-10-04 02:35:47,574 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-27
+2026-10-04 02:35:48,077 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-28
+2026-10-04 02:35:48,577 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-29
+2026-10-04 02:35:49,074 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-30
+2026-10-04 02:35:49,578 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-31
+2026-10-04 02:35:50,077 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-32
+2026-10-04 02:35:50,576 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-33
+2026-10-04 02:35:51,074 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-34
+2026-10-04 02:35:51,576 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-35
+2026-10-04 02:35:52,075 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-36
+2026-10-04 02:35:52,573 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-37
+2026-10-04 02:35:53,072 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-38
+2026-10-04 02:35:53,578 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-39
+2026-10-04 02:35:54,076 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-40
+2026-10-04 02:35:54,572 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-41
+2026-10-04 02:35:55,074 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-42
+2026-10-04 02:35:55,572 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-43
+2026-10-04 02:35:56,073 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-44
+2026-10-04 02:35:56,574 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-45
+2026-10-04 02:35:57,076 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-46
+2026-10-04 02:35:57,577 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-47
+2026-10-04 02:35:58,074 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-48
+2026-10-04 02:35:58,574 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-49
+2026-10-04 02:35:59,084 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-50
+2026-10-04 02:35:59,583 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-51
+2026-10-04 02:36:00,077 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-52
+2026-10-04 02:36:00,078 INFO o.a.j.r.Summariser: summary +      9 in 00:00:26 =    0.4/s Avg: 17594 Min:   143 Max: 19968 Err:     9 (100.00%) Active: 52 Started: 53 Finished: 1
+2026-10-04 02:36:00,079 INFO o.a.j.r.Summariser: summary =     29 in 00:07:53 =    0.1/s Avg: 19157 Min:   143 Max: 22118 Err:    29 (100.00%)
+2026-10-04 02:36:00,578 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-53
+2026-10-04 02:36:01,075 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-54
+2026-10-04 02:36:01,574 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-55
+2026-10-04 02:36:02,074 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-56
+2026-10-04 02:36:02,574 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-57
+2026-10-04 02:36:03,075 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-58
+2026-10-04 02:36:03,576 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-59
+2026-10-04 02:36:04,078 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-60
+2026-10-04 02:36:04,574 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-61
+2026-10-04 02:36:05,075 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-62
+2026-10-04 02:36:05,574 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-63
+2026-10-04 02:36:06,076 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-64
+2026-10-04 02:36:06,574 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-65
+2026-10-04 02:36:07,074 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-66
+2026-10-04 02:36:07,574 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-67
+2026-10-04 02:36:08,075 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-68
+2026-10-04 02:36:08,572 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-69
+2026-10-04 02:36:09,074 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-70
+2026-10-04 02:36:09,572 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-71
+2026-10-04 02:36:10,074 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-72
+2026-10-04 02:36:10,573 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-73
+2026-10-04 02:36:11,074 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-74
+2026-10-04 02:36:11,572 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-75
+2026-10-04 02:36:12,077 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-76
+2026-10-04 02:36:12,574 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-77
+2026-10-04 02:36:13,078 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-78
+2026-10-04 02:36:13,574 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-79
+2026-10-04 02:36:14,076 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-80
+2026-10-04 02:36:14,574 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-81
+2026-10-04 02:36:15,073 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-82
+2026-10-04 02:36:15,578 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-83
+2026-10-04 02:36:16,074 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-84
+2026-10-04 02:36:16,573 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-85
+2026-10-04 02:36:17,075 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-86
+2026-10-04 02:36:17,573 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-87
+2026-10-04 02:36:18,073 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-88
+2026-10-04 02:36:18,574 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-89
+2026-10-04 02:36:19,073 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-90
+2026-10-04 02:36:19,575 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-91
+2026-10-04 02:36:20,072 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-92
+2026-10-04 02:36:20,574 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-93
+2026-10-04 02:36:21,074 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-94
+2026-10-04 02:36:21,573 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-95
+2026-10-04 02:36:22,074 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-96
+2026-10-04 02:36:22,578 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-97
+2026-10-04 02:36:23,076 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-98
+2026-10-04 02:36:23,573 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-99
+2026-10-04 02:36:24,074 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-100
+2026-10-04 02:36:24,574 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-101
+2026-10-04 02:36:25,077 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-102
+2026-10-04 02:36:25,574 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-103
+2026-10-04 02:36:26,074 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-104
+2026-10-04 02:36:26,572 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-105
+2026-10-04 02:36:27,073 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-106
+2026-10-04 02:36:27,574 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-107
+2026-10-04 02:36:28,076 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-108
+2026-10-04 02:36:28,574 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-109
+2026-10-04 02:36:29,073 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-110
+2026-10-04 02:36:29,573 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-111
+2026-10-04 02:36:30,074 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-112
+2026-10-04 02:36:30,563 INFO o.a.j.r.Summariser: summary +     79 in 00:00:30 =    2.6/s Avg: 19293 Min:   341 Max: 21372 Err:    79 (100.00%) Active: 112 Started: 113 Finished: 1
+2026-10-04 02:36:30,564 INFO o.a.j.r.Summariser: summary =    108 in 00:08:23 =    0.2/s Avg: 19257 Min:   143 Max: 22118 Err:   108 (100.00%)
+2026-10-04 02:36:30,575 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-113
+2026-10-04 02:36:31,075 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-114
+2026-10-04 02:36:31,577 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-115
+2026-10-04 02:36:32,073 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-116
+2026-10-04 02:36:32,575 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-117
+2026-10-04 02:36:33,075 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-118
+2026-10-04 02:36:33,574 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-119
+2026-10-04 02:36:34,074 INFO o.a.j.t.JMeterThread: Thread started: TG02 - Load (120 users, 60s ramp) 2-120
+2026-10-04 02:37:00,158 INFO o.a.j.r.Summariser: summary +    157 in 00:00:30 =    5.3/s Avg: 19897 Min:   708 Max: 39695 Err:   157 (100.00%) Active: 120 Started: 121 Finished: 1
+2026-10-04 02:37:00,159 INFO o.a.j.r.Summariser: summary =    265 in 00:08:53 =    0.5/s Avg: 19636 Min:   143 Max: 39695 Err:   265 (100.00%)
+2026-10-04 02:37:30,362 INFO o.a.j.r.Summariser: summary +    159 in 00:00:30 =    5.3/s Avg: 19667 Min:   219 Max: 21181 Err:   159 (100.00%) Active: 120 Started: 121 Finished: 1
+2026-10-04 02:37:30,363 INFO o.a.j.r.Summariser: summary =    424 in 00:09:23 =    0.8/s Avg: 19648 Min:   143 Max: 39695 Err:   424 (100.00%)
+2026-10-04 02:38:00,492 INFO o.a.j.r.Summariser: summary +    164 in 00:00:30 =    5.4/s Avg: 19890 Min: 19357 Max: 20854 Err:   164 (100.00%) Active: 120 Started: 121 Finished: 1
+2026-10-04 02:38:00,492 INFO o.a.j.r.Summariser: summary =    588 in 00:09:53 =    1.0/s Avg: 19715 Min:   143 Max: 39695 Err:   588 (100.00%)
+2026-10-04 02:38:30,091 INFO o.a.j.r.Summariser: summary +    158 in 00:00:30 =    5.3/s Avg: 19559 Min:   163 Max: 20810 Err:   158 (100.00%) Active: 120 Started: 121 Finished: 1
+2026-10-04 02:38:30,092 INFO o.a.j.r.Summariser: summary =    746 in 00:10:23 =    1.2/s Avg: 19682 Min:   143 Max: 39695 Err:   746 (100.00%)
+2026-10-04 02:39:00,042 INFO o.a.j.r.Summariser: summary +    170 in 00:00:30 =    5.7/s Avg: 19231 Min:   140 Max: 20667 Err:   170 (100.00%) Active: 120 Started: 121 Finished: 1
+2026-10-04 02:39:00,043 INFO o.a.j.r.Summariser: summary =    916 in 00:10:53 =    1.4/s Avg: 19599 Min:   140 Max: 39695 Err:   916 (100.00%)
+2026-10-04 02:39:30,097 INFO o.a.j.r.Summariser: summary +    167 in 00:00:30 =    5.6/s Avg: 19064 Min:   132 Max: 20075 Err:   167 (100.00%) Active: 120 Started: 121 Finished: 1
+2026-10-04 02:39:30,097 INFO o.a.j.r.Summariser: summary =   1083 in 00:11:23 =    1.6/s Avg: 19516 Min:   132 Max: 39695 Err:  1083 (100.00%)
+2026-10-04 02:40:00,211 INFO o.a.j.r.Summariser: summary +    159 in 00:00:30 =    5.3/s Avg: 19419 Min:   137 Max: 20074 Err:   159 (100.00%) Active: 120 Started: 121 Finished: 1
+2026-10-04 02:40:00,212 INFO o.a.j.r.Summariser: summary =   1242 in 00:11:53 =    1.7/s Avg: 19504 Min:   132 Max: 39695 Err:  1242 (100.00%)
+2026-10-04 02:40:30,411 INFO o.a.j.r.Summariser: summary +    165 in 00:00:30 =    5.5/s Avg: 19651 Min:   132 Max: 39187 Err:   165 (100.00%) Active: 120 Started: 121 Finished: 1
+2026-10-04 02:40:30,412 INFO o.a.j.r.Summariser: summary =   1407 in 00:12:23 =    1.9/s Avg: 19521 Min:   132 Max: 39695 Err:  1407 (100.00%)
+2026-10-04 02:40:31,951 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-15
+2026-10-04 02:40:32,711 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-108
+2026-10-04 02:40:32,711 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-58
+2026-10-04 02:40:33,050 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-107
+2026-10-04 02:40:33,491 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-62
+2026-10-04 02:40:33,491 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-64
+2026-10-04 02:40:33,491 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-19
+2026-10-04 02:40:34,001 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-21
+2026-10-04 02:40:34,252 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-67
+2026-10-04 02:40:34,501 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-66
+2026-10-04 02:40:34,761 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-110
+2026-10-04 02:40:34,761 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-110
+2026-10-04 02:40:35,071 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-65
+2026-10-04 02:40:35,071 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-65
+2026-10-04 02:40:35,101 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-70
+2026-10-04 02:40:35,101 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-70
+2026-10-04 02:40:35,582 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-63
+2026-10-04 02:40:35,582 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-63
+2026-10-04 02:40:35,746 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-117
+2026-10-04 02:40:35,747 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-117
+2026-10-04 02:40:35,855 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-112
+2026-10-04 02:40:35,855 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-68
+2026-10-04 02:40:35,855 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-68
+2026-10-04 02:40:35,855 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-112
+2026-10-04 02:40:36,309 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-29
+2026-10-04 02:40:36,309 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-71
+2026-10-04 02:40:36,310 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-29
+2026-10-04 02:40:36,310 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-71
+2026-10-04 02:40:36,318 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-113
+2026-10-04 02:40:36,318 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-23
+2026-10-04 02:40:36,318 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-22
+2026-10-04 02:40:36,319 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-22
+2026-10-04 02:40:36,319 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-23
+2026-10-04 02:40:36,319 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-113
+2026-10-04 02:40:36,325 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-25
+2026-10-04 02:40:36,325 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-25
+2026-10-04 02:40:36,601 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-26
+2026-10-04 02:40:36,601 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-26
+2026-10-04 02:40:36,801 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-114
+2026-10-04 02:40:36,801 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-114
+2026-10-04 02:40:37,081 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-116
+2026-10-04 02:40:37,084 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-116
+2026-10-04 02:40:37,645 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-27
+2026-10-04 02:40:37,646 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-27
+2026-10-04 02:40:37,682 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-118
+2026-10-04 02:40:37,682 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-111
+2026-10-04 02:40:37,682 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-119
+2026-10-04 02:40:37,682 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-118
+2026-10-04 02:40:37,682 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-111
+2026-10-04 02:40:37,682 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-119
+2026-10-04 02:40:37,702 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-24
+2026-10-04 02:40:37,702 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-24
+2026-10-04 02:40:38,168 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-120
+2026-10-04 02:40:38,168 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-32
+2026-10-04 02:40:38,168 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-32
+2026-10-04 02:40:38,168 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-120
+2026-10-04 02:40:38,184 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-115
+2026-10-04 02:40:38,184 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-20
+2026-10-04 02:40:38,185 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-20
+2026-10-04 02:40:38,185 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-115
+2026-10-04 02:40:38,420 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-75
+2026-10-04 02:40:38,420 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-75
+2026-10-04 02:40:38,775 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-31
+2026-10-04 02:40:38,776 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-31
+2026-10-04 02:40:39,285 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-73
+2026-10-04 02:40:39,285 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-109
+2026-10-04 02:40:39,285 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-72
+2026-10-04 02:40:39,286 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-73
+2026-10-04 02:40:39,286 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-72
+2026-10-04 02:40:39,286 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-109
+2026-10-04 02:40:39,455 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-77
+2026-10-04 02:40:39,455 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-77
+2026-10-04 02:40:39,705 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-76
+2026-10-04 02:40:39,705 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-76
+2026-10-04 02:40:39,955 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-28
+2026-10-04 02:40:39,955 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-74
+2026-10-04 02:40:39,956 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-28
+2026-10-04 02:40:39,956 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-74
+2026-10-04 02:40:40,305 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-80
+2026-10-04 02:40:40,305 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-39
+2026-10-04 02:40:40,305 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-39
+2026-10-04 02:40:40,305 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-80
+2026-10-04 02:40:40,734 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-81
+2026-10-04 02:40:40,734 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-81
+2026-10-04 02:40:40,824 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-41
+2026-10-04 02:40:40,824 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-30
+2026-10-04 02:40:40,824 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-41
+2026-10-04 02:40:40,824 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-30
+2026-10-04 02:40:40,995 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-79
+2026-10-04 02:40:40,996 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-79
+2026-10-04 02:40:41,256 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-33
+2026-10-04 02:40:41,257 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-33
+2026-10-04 02:40:41,335 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-34
+2026-10-04 02:40:41,335 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-35
+2026-10-04 02:40:41,335 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-34
+2026-10-04 02:40:41,335 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-35
+2026-10-04 02:40:41,755 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-38
+2026-10-04 02:40:41,755 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-38
+2026-10-04 02:40:41,794 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-78
+2026-10-04 02:40:41,794 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-78
+2026-10-04 02:40:42,275 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-82
+2026-10-04 02:40:42,275 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-82
+2026-10-04 02:40:42,855 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-40
+2026-10-04 02:40:42,855 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-40
+2026-10-04 02:40:43,025 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-83
+2026-10-04 02:40:43,026 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-83
+2026-10-04 02:40:43,805 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-88
+2026-10-04 02:40:43,805 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-88
+2026-10-04 02:40:43,894 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-69
+2026-10-04 02:40:43,894 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-69
+2026-10-04 02:40:44,047 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-44
+2026-10-04 02:40:44,047 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-44
+2026-10-04 02:40:44,574 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-43
+2026-10-04 02:40:44,574 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-43
+2026-10-04 02:40:44,834 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-86
+2026-10-04 02:40:44,835 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-86
+2026-10-04 02:40:44,874 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-49
+2026-10-04 02:40:44,875 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-49
+2026-10-04 02:40:44,916 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-1
+2026-10-04 02:40:44,916 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-36
+2026-10-04 02:40:44,916 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-92
+2026-10-04 02:40:44,916 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-36
+2026-10-04 02:40:44,916 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-92
+2026-10-04 02:40:44,916 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-1
+2026-10-04 02:40:45,425 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-85
+2026-10-04 02:40:45,425 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-85
+2026-10-04 02:40:45,594 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-91
+2026-10-04 02:40:45,594 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-91
+2026-10-04 02:40:45,848 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-93
+2026-10-04 02:40:45,849 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-93
+2026-10-04 02:40:45,865 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-84
+2026-10-04 02:40:45,865 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-84
+2026-10-04 02:40:45,926 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-37
+2026-10-04 02:40:45,926 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-37
+2026-10-04 02:40:46,104 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-90
+2026-10-04 02:40:46,104 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-90
+2026-10-04 02:40:46,385 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-47
+2026-10-04 02:40:46,386 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-47
+2026-10-04 02:40:46,445 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-95
+2026-10-04 02:40:46,445 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-95
+2026-10-04 02:40:46,985 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-45
+2026-10-04 02:40:46,985 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-45
+2026-10-04 02:40:47,386 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-2
+2026-10-04 02:40:47,386 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-2
+2026-10-04 02:40:47,477 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-46
+2026-10-04 02:40:47,477 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-42
+2026-10-04 02:40:47,477 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-46
+2026-10-04 02:40:47,477 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-42
+2026-10-04 02:40:47,635 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-50
+2026-10-04 02:40:47,635 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-51
+2026-10-04 02:40:47,635 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-50
+2026-10-04 02:40:47,635 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-51
+2026-10-04 02:40:47,905 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-97
+2026-10-04 02:40:47,906 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-97
+2026-10-04 02:40:47,975 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-4
+2026-10-04 02:40:47,975 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-4
+2026-10-04 02:40:48,005 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-89
+2026-10-04 02:40:48,005 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-89
+2026-10-04 02:40:48,155 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-56
+2026-10-04 02:40:48,156 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-56
+2026-10-04 02:40:48,415 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-3
+2026-10-04 02:40:48,416 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-3
+2026-10-04 02:40:48,496 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-10
+2026-10-04 02:40:48,496 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-10
+2026-10-04 02:40:48,664 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-7
+2026-10-04 02:40:48,664 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-94
+2026-10-04 02:40:48,664 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-7
+2026-10-04 02:40:48,664 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-94
+2026-10-04 02:40:48,936 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-53
+2026-10-04 02:40:48,936 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-87
+2026-10-04 02:40:48,936 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-87
+2026-10-04 02:40:48,936 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-53
+2026-10-04 02:40:49,445 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-96
+2026-10-04 02:40:49,446 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-96
+2026-10-04 02:40:49,525 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-13
+2026-10-04 02:40:49,525 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-9
+2026-10-04 02:40:49,525 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-13
+2026-10-04 02:40:49,525 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-9
+2026-10-04 02:40:49,955 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-48
+2026-10-04 02:40:49,955 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-48
+2026-10-04 02:40:49,984 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-8
+2026-10-04 02:40:49,984 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-8
+2026-10-04 02:40:50,034 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-5
+2026-10-04 02:40:50,034 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-5
+2026-10-04 02:40:50,204 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-11
+2026-10-04 02:40:50,205 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-11
+2026-10-04 02:40:50,464 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-52
+2026-10-04 02:40:50,464 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-52
+2026-10-04 02:40:50,975 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-101
+2026-10-04 02:40:50,976 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-101
+2026-10-04 02:40:51,064 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-98
+2026-10-04 02:40:51,064 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-98
+2026-10-04 02:40:51,215 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-100
+2026-10-04 02:40:51,216 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-100
+2026-10-04 02:40:52,514 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-55
+2026-10-04 02:40:52,515 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-55
+2026-10-04 02:40:52,594 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-104
+2026-10-04 02:40:52,594 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-57
+2026-10-04 02:40:52,594 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-16
+2026-10-04 02:40:52,595 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-104
+2026-10-04 02:40:52,595 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-57
+2026-10-04 02:40:52,595 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-16
+2026-10-04 02:40:52,765 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-6
+2026-10-04 02:40:52,765 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-6
+2026-10-04 02:40:53,024 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-103
+2026-10-04 02:40:53,024 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-103
+2026-10-04 02:40:53,275 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-106
+2026-10-04 02:40:53,276 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-106
+2026-10-04 02:40:53,526 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-54
+2026-10-04 02:40:53,526 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-59
+2026-10-04 02:40:53,526 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-54
+2026-10-04 02:40:53,526 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-59
+2026-10-04 02:40:53,605 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-18
+2026-10-04 02:40:53,605 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-60
+2026-10-04 02:40:53,605 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-12
+2026-10-04 02:40:53,605 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-60
+2026-10-04 02:40:53,605 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-18
+2026-10-04 02:40:53,605 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-12
+2026-10-04 02:40:53,624 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-99
+2026-10-04 02:40:53,624 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-102
+2026-10-04 02:40:53,625 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-99
+2026-10-04 02:40:53,625 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-102
+2026-10-04 02:40:54,055 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-17
+2026-10-04 02:40:54,055 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-17
+2026-10-04 02:40:54,294 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-14
+2026-10-04 02:40:54,294 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-105
+2026-10-04 02:40:54,294 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-14
+2026-10-04 02:40:54,294 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-105
+2026-10-04 02:40:54,564 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: TG02 - Load (120 users, 60s ramp) 2-61
+2026-10-04 02:40:54,564 INFO o.a.j.t.JMeterThread: Thread finished: TG02 - Load (120 users, 60s ramp) 2-61
+2026-10-04 02:40:54,565 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2026-10-04 02:40:54,570 INFO o.a.j.r.Summariser: summary +    135 in 00:00:24 =    5.6/s Avg: 19666 Min: 19341 Max: 20686 Err:   135 (100.00%) Active: 0 Started: 121 Finished: 121
+2026-10-04 02:40:54,570 INFO o.a.j.r.Summariser: summary =   1542 in 00:12:47 =    2.0/s Avg: 19534 Min:   132 Max: 39695 Err:  1542 (100.00%)

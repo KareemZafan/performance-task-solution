@@ -1,0 +1,9 @@
+apiVersion: 1
+providers:
+  - name: jmeter
+    folder: JMeter
+    type: file
+    disableDeletion: false
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards   # contains jmeter-19950.json (grafana.com dashboard ID 19950)

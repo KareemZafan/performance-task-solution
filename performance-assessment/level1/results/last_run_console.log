@@ -1,0 +1,68 @@
+>> Running baseline + load (non-GUI). Results -> /Users/kareem_mohamed/Desktop/apis/performance-assessment/level1/results/run_20261004_022806
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using L1_FakeStore_Journey.jmx
+Starting standalone test @ 2026 Oct 4 02:28:07 EEST (1791070087404)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      1 in 00:00:23 =    0.0/s Avg: 19958 Min: 19958 Max: 19958 Err:     1 (100.00%) Active: 1 Started: 1 Finished: 0
+summary +     19 in 00:07:05 =    0.0/s Avg: 19856 Min: 19333 Max: 22118 Err:    19 (100.00%) Active: 1 Started: 1 Finished: 0
+summary =     20 in 00:07:27 =    0.0/s Avg: 19861 Min: 19333 Max: 22118 Err:    20 (100.00%)
+summary +      9 in 00:00:26 =    0.4/s Avg: 17594 Min:   143 Max: 19968 Err:     9 (100.00%) Active: 52 Started: 53 Finished: 1
+summary =     29 in 00:07:53 =    0.1/s Avg: 19157 Min:   143 Max: 22118 Err:    29 (100.00%)
+summary +     79 in 00:00:30 =    2.6/s Avg: 19293 Min:   341 Max: 21372 Err:    79 (100.00%) Active: 112 Started: 113 Finished: 1
+summary =    108 in 00:08:23 =    0.2/s Avg: 19257 Min:   143 Max: 22118 Err:   108 (100.00%)
+summary +    157 in 00:00:30 =    5.3/s Avg: 19897 Min:   708 Max: 39695 Err:   157 (100.00%) Active: 120 Started: 121 Finished: 1
+summary =    265 in 00:08:53 =    0.5/s Avg: 19636 Min:   143 Max: 39695 Err:   265 (100.00%)
+summary +    159 in 00:00:30 =    5.3/s Avg: 19667 Min:   219 Max: 21181 Err:   159 (100.00%) Active: 120 Started: 121 Finished: 1
+summary =    424 in 00:09:23 =    0.8/s Avg: 19648 Min:   143 Max: 39695 Err:   424 (100.00%)
+summary +    164 in 00:00:30 =    5.4/s Avg: 19890 Min: 19357 Max: 20854 Err:   164 (100.00%) Active: 120 Started: 121 Finished: 1
+summary =    588 in 00:09:53 =    1.0/s Avg: 19715 Min:   143 Max: 39695 Err:   588 (100.00%)
+summary +    158 in 00:00:30 =    5.3/s Avg: 19559 Min:   163 Max: 20810 Err:   158 (100.00%) Active: 120 Started: 121 Finished: 1
+summary =    746 in 00:10:23 =    1.2/s Avg: 19682 Min:   143 Max: 39695 Err:   746 (100.00%)
+summary +    170 in 00:00:30 =    5.7/s Avg: 19231 Min:   140 Max: 20667 Err:   170 (100.00%) Active: 120 Started: 121 Finished: 1
+summary =    916 in 00:10:53 =    1.4/s Avg: 19599 Min:   140 Max: 39695 Err:   916 (100.00%)
+summary +    167 in 00:00:30 =    5.6/s Avg: 19064 Min:   132 Max: 20075 Err:   167 (100.00%) Active: 120 Started: 121 Finished: 1
+summary =   1083 in 00:11:23 =    1.6/s Avg: 19516 Min:   132 Max: 39695 Err:  1083 (100.00%)
+summary +    159 in 00:00:30 =    5.3/s Avg: 19419 Min:   137 Max: 20074 Err:   159 (100.00%) Active: 120 Started: 121 Finished: 1
+summary =   1242 in 00:11:53 =    1.7/s Avg: 19504 Min:   132 Max: 39695 Err:  1242 (100.00%)
+summary +    165 in 00:00:30 =    5.5/s Avg: 19651 Min:   132 Max: 39187 Err:   165 (100.00%) Active: 120 Started: 121 Finished: 1
+summary =   1407 in 00:12:23 =    1.9/s Avg: 19521 Min:   132 Max: 39695 Err:  1407 (100.00%)
+summary +    135 in 00:00:24 =    5.6/s Avg: 19666 Min: 19341 Max: 20686 Err:   135 (100.00%) Active: 0 Started: 121 Finished: 121
+summary =   1542 in 00:12:47 =    2.0/s Avg: 19534 Min:   132 Max: 39695 Err:  1542 (100.00%)
+Tidying up ...    @ 2026 Oct 4 02:40:54 EEST (1791070854570)
+... end of run
+>> Generating HTML dashboard for the LOAD run only
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+>> Baseline vs Load summary + SLA verdict
+### Baseline metrics (ms)
+
+| Transaction | Samples | Err % | Avg | P90 | P95 | Max |
+|---|---:|---:|---:|---:|---:|---:|
+| TX00 User Journey | 20 | 100.0 | 19876 | 20253 | 20347 | 22120 |
+| TX01 Get Product List | 20 | 100.0 | 19861 | 20252 | 20345 | 22118 |
+
+### Load metrics (ms) compared with baseline
+
+| Transaction | Samples | TPS | Err % | Avg | Δ Avg | P90 | Δ P90 | P95 | Δ P95 | Codes |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| TX00 User Journey | 1522 | 4.76 | 100.0 | 19531 | -2% | 20143 | -1% | 20375 | +0% | :1522 |
+| TX01 Get Product List | 1522 | 4.76 | 100.0 | 19530 | -2% | 20142 | -1% | 20375 | +0% | 522:1497, Non HTTP response code: java.net.SocketException:22, Non HTTP response code: java.net.SocketTimeoutException:3 |
+
+### SLA verdict (load run)
+
+| Transaction | Thresholds | Verdict | Breached |
+|---|---|---|---|
+| TX00 User Journey | avg≤2000, p90≤3000, p95≤3500, err≤1.0% | **FAIL** | avg<=2000ms, p90<=3000ms, p95<=3500ms, err<=1.0% |
+| TX01 Get Product List | avg≤800, p90≤1200, p95≤1500, err≤1.0% | **FAIL** | avg<=800ms, p90<=1200ms, p95<=1500ms, err<=1.0% |
+
+**Overall verdict: FAIL**
+
+>> Done. Open /Users/kareem_mohamed/Desktop/apis/performance-assessment/level1/results/run_20261004_022806/html_report_load/index.html

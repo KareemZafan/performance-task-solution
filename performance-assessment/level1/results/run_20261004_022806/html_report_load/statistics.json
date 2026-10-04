@@ -1,0 +1,50 @@
+{
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 1522,
+    "errorCount" : 1522,
+    "errorPct" : 100.0,
+    "meanResTime" : 19529.949408672812,
+    "medianResTime" : 19725.0,
+    "minResTime" : 132.0,
+    "maxResTime" : 39695.0,
+    "pct1ResTime" : 20143.4,
+    "pct2ResTime" : 20375.0,
+    "pct3ResTime" : 20848.47,
+    "throughput" : 4.791784073772066,
+    "receivedKBytesPerSec" : 2.1237998403001,
+    "sentKBytesPerSec" : 0.7962519962487445
+  },
+  "TX01 Get Product List" : {
+    "transaction" : "TX01 Get Product List",
+    "sampleCount" : 1522,
+    "errorCount" : 1522,
+    "errorPct" : 100.0,
+    "meanResTime" : 19529.949408672812,
+    "medianResTime" : 19725.0,
+    "minResTime" : 132.0,
+    "maxResTime" : 39695.0,
+    "pct1ResTime" : 20143.4,
+    "pct2ResTime" : 20375.0,
+    "pct3ResTime" : 20848.47,
+    "throughput" : 4.791784073772066,
+    "receivedKBytesPerSec" : 2.1237998403001,
+    "sentKBytesPerSec" : 0.7962519962487445
+  },
+  "TX00 User Journey" : {
+    "transaction" : "TX00 User Journey",
+    "sampleCount" : 1522,
+    "errorCount" : 1522,
+    "errorPct" : 100.0,
+    "meanResTime" : 19530.823258869907,
+    "medianResTime" : 19726.0,
+    "minResTime" : 132.0,
+    "maxResTime" : 39696.0,
+    "pct1ResTime" : 20144.4,
+    "pct2ResTime" : 20377.55,
+    "pct3ResTime" : 20849.47,
+    "throughput" : 4.794652167201681,
+    "receivedKBytesPerSec" : 2.1250710278732474,
+    "sentKBytesPerSec" : 0.796728588074169
+  }
+}

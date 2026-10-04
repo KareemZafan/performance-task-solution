@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Level 2 - reqres.in user journey (Apache JMeter 5.6.3 + jpgc-casutg "Custom Thread Groups" plugin)
+  Register -> Login -> Get Profile -> random( Logout | Delete Profile )
+-->
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="L2 - Reqres User Journey">
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+    </TestPlan>
+    <hashTree>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set - registration users">
+        <stringProp name="filename">${__P(users.csv,data/users.csv)}</stringProp>
+        <stringProp name="fileEncoding">UTF-8</stringProp>
+        <stringProp name="variableNames">email,password</stringProp>
+        <boolProp name="ignoreFirstLine">true</boolProp>
+        <stringProp name="delimiter">,</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.protocol">${__P(protocol,https)}</stringProp>
+        <stringProp name="HTTPSampler.domain">${__P(host,reqres.in)}</stringProp>
+        <stringProp name="HTTPSampler.port">${__P(port,)}</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout">5000</stringProp>
+        <stringProp name="HTTPSampler.response_timeout">30000</stringProp>
+        <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager - API key">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">x-api-key</stringProp>
+            <stringProp name="Header.value">${__P(api.key,reqres-free-v1)}</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Content-Type</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Accept</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+
+      <com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroup guiclass="com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroupGui" testclass="com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroup" testname="CTG - 10 users / 30 s ramp / 5 steps">
+        <elementProp name="ThreadGroup.main_controller" elementType="com.blazemeter.jmeter.control.VirtualUserController"/>
+        <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
+        <stringProp name="TargetLevel">${__P(users,10)}</stringProp>
+        <stringProp name="RampUp">${__P(rampup,30)}</stringProp>
+        <stringProp name="Steps">${__P(steps,5)}</stringProp>
+        <stringProp name="Hold">${__P(hold,60)}</stringProp>
+        <stringProp name="LogFilename"></stringProp>
+        <stringProp name="Iterations">${__P(iterations,)}</stringProp>
+        <stringProp name="Unit">S</stringProp>
+      </com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroup>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TX00 Reqres User Journey">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <!-- ===== 1. Register ===== -->
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TX01 Register">
+            <stringProp name="HTTPSampler.path">/api/register</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;email&quot;:&quot;${email}&quot;,&quot;password&quot;:&quot;${password}&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="RA - HTTP 200">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message">Register must return 200</stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">8</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor - registeredId">
+              <stringProp name="JSONPostProcessor.referenceNames">registeredId</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.id</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+
+          <!-- ===== 2. Login (same CSV row) ===== -->
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TX02 Login">
+            <stringProp name="HTTPSampler.path">/api/login</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;email&quot;:&quot;${email}&quot;,&quot;password&quot;:&quot;${password}&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="RA - HTTP 200">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message">Login must return 200</stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">8</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor - token">
+              <stringProp name="JSONPostProcessor.referenceNames">token</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.token</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+
+          <!-- ===== 3. Get Profile ===== -->
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TX03 Get Profile">
+            <stringProp name="HTTPSampler.path">/api/users/${registeredId}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="RA - HTTP 200">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message">Get Profile must return 200</stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">8</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor - userId &amp; profileEmail">
+              <stringProp name="JSONPostProcessor.referenceNames">userId;profileEmail</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.id;$.data.email</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1;1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND;NOT_FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="RA - Profile email equals CSV email">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="0">${email}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message">Profile email does not match the email used to register (from CSV)</stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">8</intProp>
+              <stringProp name="Assertion.scope">variable</stringProp>
+              <stringProp name="Scope.variable">profileEmail</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+
+          <!-- ===== 4. Random branch: Logout OR Delete ===== -->
+          <RandomController guiclass="RandomControlGui" testclass="RandomController" testname="Random Controller - Logout OR Delete">
+            <intProp name="InterleaveControl.style">1</intProp>
+          </RandomController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TX04a Logout">
+              <stringProp name="HTTPSampler.path">/api/users/${userId}</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;action&quot;:&quot;logout&quot;,&quot;token&quot;:&quot;${token}&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="RA - HTTP 201 (reqres answers POST with Created)">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="49587">201</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message">POST /api/users/{id} returns 201 Created on reqres</stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 - append logged-out userId to CSV">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">// Only record users that really reached (and passed) the Logout API.
+if (!prev.isSuccessful()) return
+
+// {host} placeholder -&gt; one file per load generator (two slaves must never share one file)
+String path = props.getProperty(&quot;logout.file&quot;, &quot;output/logout_users.csv&quot;)
+        .replace(&quot;{host}&quot;, java.net.InetAddress.getLocalHost().getHostName())
+File f = new File(path)
+String line = [vars.get(&quot;userId&quot;), vars.get(&quot;email&quot;), ctx.getThread().getThreadName(),
+               new Date().format(&quot;yyyy-MM-dd&apos;T&apos;HH:mm:ss.SSS&quot;)].join(&quot;,&quot;) + &quot;\n&quot;
+
+// Many threads write to the same file: serialize the writes on one JVM-wide lock,
+// otherwise lines from two threads can interleave and corrupt the CSV.
+synchronized (org.apache.jmeter.util.JMeterUtils.class) {
+    if (!f.exists()) {
+        f.getAbsoluteFile().getParentFile().mkdirs()
+        f.append(&quot;userId,email,threadName,timestamp\n&quot;)
+    }
+    f.append(line)
+}</stringProp>
+              </JSR223PostProcessor>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TX04b Delete Profile">
+              <stringProp name="HTTPSampler.path">/api/users/${userId}</stringProp>
+              <stringProp name="HTTPSampler.method">DELETE</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="RA - HTTP 204 (No Content is the success code for DELETE)">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="49590">204</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message">DELETE /api/users/{id} returns 204 No Content on reqres</stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+
+        <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer 1-3 s">
+          <stringProp name="ConstantTimer.delay">${__P(think.min,1000)}</stringProp>
+          <stringProp name="RandomTimer.range">${__P(think.range,2000)}</stringProp>
+        </UniformRandomTimer>
+        <hashTree/>
+
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree - request/response body log">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time><latency>true</latency><timestamp>true</timestamp><success>true</success><label>true</label><code>true</code><message>true</message><threadName>true</threadName><dataType>true</dataType><encoding>true</encoding><assertions>true</assertions><subresults>true</subresults><responseData>true</responseData><samplerData>true</samplerData><xml>true</xml><fieldNames>true</fieldNames><responseHeaders>true</responseHeaders><requestHeaders>true</requestHeaders><responseDataOnError>false</responseDataOnError><saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage><assertionsResultsToSave>0</assertionsResultsToSave><bytes>true</bytes><sentBytes>true</sentBytes><url>true</url><threadCounts>true</threadCounts><idleTime>true</idleTime><connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">${__P(vrt.file,logs/request_response_log.xml)}</stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

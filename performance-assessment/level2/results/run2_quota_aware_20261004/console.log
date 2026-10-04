@@ -1,0 +1,47 @@
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using L2_Reqres_Journey.jmx
+Starting standalone test @ 2026 Oct 4 03:00:21 EEST (1791072021984)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      1 in 00:00:41 =    0.0/s Avg:   530 Min:   530 Max:   530 Err:     0 (0.00%) Active: 10 Started: 10 Finished: 0
+summary +     16 in 00:00:58 =    0.3/s Avg:   259 Min:   118 Max:   530 Err:     0 (0.00%) Active: 10 Started: 10 Finished: 0
+summary =     17 in 00:01:39 =    0.2/s Avg:   275 Min:   118 Max:   530 Err:     0 (0.00%)
+summary +      8 in 00:00:34 =    0.2/s Avg:   308 Min:   125 Max:   433 Err:     0 (0.00%) Active: 10 Started: 10 Finished: 0
+summary =     25 in 00:02:13 =    0.2/s Avg:   285 Min:   118 Max:   530 Err:     0 (0.00%)
+summary +      6 in 00:00:29 =    0.2/s Avg:   381 Min:   220 Max:   442 Err:     0 (0.00%) Active: 10 Started: 10 Finished: 0
+summary =     31 in 00:02:42 =    0.2/s Avg:   304 Min:   118 Max:   530 Err:     0 (0.00%)
+summary +     16 in 00:00:58 =    0.3/s Avg:   260 Min:   139 Max:   402 Err:     7 (43.75%) Active: 4 Started: 10 Finished: 6
+summary =     47 in 00:03:40 =    0.2/s Avg:   289 Min:   118 Max:   530 Err:     7 (14.89%)
+summary +      3 in 00:00:06 =    0.5/s Avg:   362 Min:   351 Max:   379 Err:     3 (100.00%) Active: 0 Started: 10 Finished: 10
+summary =     50 in 00:03:46 =    0.2/s Avg:   293 Min:   118 Max:   530 Err:    10 (20.00%)
+Tidying up ...    @ 2026 Oct 4 03:04:07 EEST (1791072247951)
+... end of run
+### Metrics (ms)
+
+| Transaction | Samples | TPS | Err % | Avg | Δ Avg | P90 | Δ P90 | P95 | Δ P95 | Codes |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| TX00 Reqres User Journey | 20 | 0.09 | 50.0 | 736 | n/a | 1259 | n/a | 1353 | n/a | :10, 200:10 |
+| TX01 Register | 20 | 0.09 | 50.0 | 359 | n/a | 402 | n/a | 530 | n/a | 200:10, 429:10 |
+| TX02 Login | 10 | 0.04 | 0.0 | 147 | n/a | 172 | n/a | 172 | n/a | 200:10 |
+| TX03 Get Profile | 10 | 0.04 | 0.0 | 412 | n/a | 434 | n/a | 442 | n/a | 200:10 |
+| TX04a Logout | 4 | 0.02 | 0.0 | 180 | n/a | 220 | n/a | 220 | n/a | 201:4 |
+| TX04b Delete Profile | 6 | 0.03 | 0.0 | 200 | n/a | 364 | n/a | 364 | n/a | 204:6 |
+
+### SLA verdict (load run)
+
+| Transaction | Thresholds | Verdict | Breached |
+|---|---|---|---|
+| TX00 Reqres User Journey | avg≤3000, p90≤4500, p95≤5000, err≤1.0% | **FAIL** | err<=1.0% |
+| TX01 Register | avg≤1000, p90≤1500, p95≤2000, err≤1.0% | **FAIL** | err<=1.0% |
+| TX02 Login | avg≤1000, p90≤1500, p95≤2000, err≤1.0% | **PASS** | - |
+| TX03 Get Profile | avg≤1000, p90≤1500, p95≤2000, err≤1.0% | **PASS** | - |
+| TX04a Logout | avg≤1000, p90≤1500, p95≤2000, err≤1.0% | **PASS** | - |
+| TX04b Delete Profile | avg≤1000, p90≤1500, p95≤2000, err≤1.0% | **PASS** | - |
+
+**Overall verdict: FAIL**
+
+>> Done. Report: /Users/kareem_mohamed/Desktop/apis/performance-assessment/level2/results/run_20261004_030021/html_report/index.html   Logout users: /Users/kareem_mohamed/Desktop/apis/performance-assessment/level2/results/run_20261004_030021/logout_users.csv

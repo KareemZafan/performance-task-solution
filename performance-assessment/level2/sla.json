@@ -1,0 +1,7 @@
+{
+  "_comment": "SLA thresholds for the reqres journey (ms, think time excluded).",
+  "default": { "avg_ms": 1000, "p90_ms": 1500, "p95_ms": 2000, "error_pct": 1.0 },
+  "transactions": {
+    "TX00 Reqres User Journey": { "avg_ms": 3000, "p90_ms": 4500, "p95_ms": 5000, "error_pct": 1.0 }
+  }
+}

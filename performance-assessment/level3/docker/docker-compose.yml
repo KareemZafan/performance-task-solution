@@ -1,0 +1,54 @@
+# Local distributed lab: 1 master + 2 slaves, each a separate container with its own IP.
+# Equivalent to 3 VMs on a host-only network. See ../../docs/level3-distributed.md
+#
+#   docker compose up -d --build slave1 slave2      # start slaves
+#   docker compose run --rm master                  # run test from master
+#   docker compose exec slave1 /work/scripts/kill_jmeter.sh local
+#   docker compose down
+x-jmeter: &jmeter
+  build: .
+  image: perf/jmeter:5.6.3
+  volumes:
+    - ..:/work            # level3 folder: plan, data, config, scripts, results
+    - ../../tools:/tools:ro
+
+services:
+  slave1:
+    <<: *jmeter
+    container_name: jmeter-slave1
+    hostname: slave1
+    networks: { perfnet: { ipv4_address: 172.28.0.11 } }
+    environment:
+      HEAP: "-Xms512m -Xmx4g -XX:MaxMetaspaceSize=256m"
+    # Same as scripts/start_slave.sh: bind RMI to this node's IP, load the shared distributed.properties
+    command: ["bash", "-c", "mkdir -p /work/results/slave1 && cd /work && exec jmeter -s -Dserver_port=1099 -Djava.rmi.server.hostname=172.28.0.11 -q /work/config/distributed.properties -j /work/results/slave1/jmeter-server.log"]
+
+  slave2:
+    <<: *jmeter
+    container_name: jmeter-slave2
+    hostname: slave2
+    networks: { perfnet: { ipv4_address: 172.28.0.12 } }
+    environment:
+      HEAP: "-Xms512m -Xmx4g -XX:MaxMetaspaceSize=256m"
+    # Same as scripts/start_slave.sh: bind RMI to this node's IP, load the shared distributed.properties
+    command: ["bash", "-c", "mkdir -p /work/results/slave2 && cd /work && exec jmeter -s -Dserver_port=1099 -Djava.rmi.server.hostname=172.28.0.12 -q /work/config/distributed.properties -j /work/results/slave2/jmeter-server.log"]
+
+  master:
+    <<: *jmeter
+    container_name: jmeter-master
+    hostname: master
+    networks: { perfnet: { ipv4_address: 172.28.0.10 } }
+    profiles: ["run"]      # not started by "up"; started on demand with "run"
+    depends_on: [slave1, slave2]
+    environment:
+      SLAVES: 172.28.0.11,172.28.0.12
+      MASTER_IP: 172.28.0.10
+      TOOLS: /tools
+      HEAP: "-Xms512m -Xmx4g -XX:MaxMetaspaceSize=256m"
+    command: ["/work/scripts/run_distributed.sh"]
+
+networks:
+  perfnet:
+    ipam:
+      config:
+        - subnet: 172.28.0.0/24

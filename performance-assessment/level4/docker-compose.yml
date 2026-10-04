@@ -1,0 +1,47 @@
+# Level 4 - live monitoring stack: InfluxDB 2.x (time-series store) + Grafana (dashboards)
+# Start:  docker compose up -d        Stop: docker compose down        Wipe data: docker compose down -v
+services:
+  influxdb:
+    image: influxdb:2.7
+    container_name: perf-influxdb
+    ports:
+      - "8086:8086"
+    environment:
+      # First-boot auto-setup (only runs when the volume is empty)
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_USERNAME: admin
+      DOCKER_INFLUXDB_INIT_PASSWORD: admin12345
+      DOCKER_INFLUXDB_INIT_ORG: perf
+      DOCKER_INFLUXDB_INIT_BUCKET: jmeter
+      DOCKER_INFLUXDB_INIT_RETENTION: 30d
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: jmeter-local-dev-token   # local lab only - never reuse in real envs
+    volumes:
+      - influxdb-data:/var/lib/influxdb2
+    healthcheck:
+      test: ["CMD", "influx", "ping"]
+      interval: 5s
+      retries: 20
+
+  grafana:
+    image: grafana/grafana:11.2.0
+    container_name: perf-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_USERS_DEFAULT_THEME: dark
+      # Local lab convenience: anyone on localhost can VIEW dashboards without logging in
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+      - grafana-data:/var/lib/grafana
+    depends_on:
+      influxdb:
+        condition: service_healthy
+
+volumes:
+  influxdb-data:
+  grafana-data:

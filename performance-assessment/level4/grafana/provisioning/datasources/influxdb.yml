@@ -1,0 +1,16 @@
+# Grafana reads this at startup and creates the InfluxDB data source automatically.
+apiVersion: 1
+datasources:
+  - name: InfluxDB-JMeter
+    uid: influxdb-jmeter          # dashboard 19950 JSON is patched to point at this uid
+    type: influxdb
+    access: proxy                 # Grafana server -> InfluxDB (container-to-container)
+    url: http://influxdb:8086     # service name on the compose network, NOT localhost
+    isDefault: true
+    jsonData:
+      version: Flux               # dashboard 19950 uses Flux queries (InfluxDB 2.x)
+      organization: perf
+      defaultBucket: jmeter
+      tlsSkipVerify: true
+    secureJsonData:
+      token: jmeter-local-dev-token

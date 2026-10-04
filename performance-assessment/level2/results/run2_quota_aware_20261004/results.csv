@@ -1,0 +1,71 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1791072062210,530,TX01 Register,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-2,text,true,,2231,288,10,10,https://reqres.in/api/register,530,0,347
+1791072062210,530,TX01 Register,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-1,text,true,,2239,288,10,10,https://reqres.in/api/register,530,0,347
+1791072068177,297,TX01 Register,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-3,text,true,,2247,285,10,10,https://reqres.in/api/register,297,0,162
+1791072068171,321,TX01 Register,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-4,text,true,,2239,284,10,10,https://reqres.in/api/register,321,0,168
+1791072074211,291,TX01 Register,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-6,text,true,,2241,288,10,10,https://reqres.in/api/register,291,0,169
+1791072074211,331,TX01 Register,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-5,text,true,,2248,290,10,10,https://reqres.in/api/register,331,0,169
+1791072080248,335,TX01 Register,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-7,text,true,,2239,290,10,10,https://reqres.in/api/register,335,0,207
+1791072080248,335,TX01 Register,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-8,text,true,,2239,292,10,10,https://reqres.in/api/register,335,0,207
+1791072086291,322,TX01 Register,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-9,text,true,,2235,288,10,10,https://reqres.in/api/register,322,0,187
+1791072086285,328,TX01 Register,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-10,text,true,,2237,288,10,10,https://reqres.in/api/register,328,0,193
+1791072102773,172,TX02 Login,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-1,text,true,,2236,285,10,10,https://reqres.in/api/login,172,0,0
+1791072102773,172,TX02 Login,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-2,text,true,,2234,285,10,10,https://reqres.in/api/login,172,0,0
+1791072108488,126,TX02 Login,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-3,text,true,,2230,282,10,10,https://reqres.in/api/login,126,0,0
+1791072108496,118,TX02 Login,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-4,text,true,,2237,281,10,10,https://reqres.in/api/login,118,0,0
+1791072114511,161,TX02 Login,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-6,text,true,,2232,285,10,10,https://reqres.in/api/login,161,0,0
+1791072114551,161,TX02 Login,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-5,text,true,,2232,287,10,10,https://reqres.in/api/login,161,0,0
+1791072120597,147,TX02 Login,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-7,text,true,,2240,287,10,10,https://reqres.in/api/login,147,0,0
+1791072120597,147,TX02 Login,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-8,text,true,,2245,289,10,10,https://reqres.in/api/login,147,0,0
+1791072126627,125,TX02 Login,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-10,text,true,,2235,285,10,10,https://reqres.in/api/login,125,0,0
+1791072126628,144,TX02 Login,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-9,text,true,,2241,285,10,10,https://reqres.in/api/login,144,0,0
+1791072142953,433,TX03 Get Profile,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-2,text,true,,2737,208,10,10,https://reqres.in/api/users/1,433,0,206
+1791072142955,431,TX03 Get Profile,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-1,text,true,,2747,208,10,10,https://reqres.in/api/users/2,431,0,204
+1791072148626,408,TX03 Get Profile,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-3,text,true,,2737,208,10,10,https://reqres.in/api/users/3,408,0,238
+1791072148627,407,TX03 Get Profile,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-4,text,true,,2726,208,10,10,https://reqres.in/api/users/4,407,0,237
+1791072154679,374,TX03 Get Profile,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-6,text,true,,2750,208,10,10,https://reqres.in/api/users/6,374,0,185
+1791072154719,434,TX03 Get Profile,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-5,text,true,,2762,208,10,10,https://reqres.in/api/users/5,434,0,234
+1791072160756,378,TX03 Get Profile,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-8,text,true,,2742,208,10,10,https://reqres.in/api/users/8,377,0,189
+1791072160756,398,TX03 Get Profile,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-7,text,true,,2746,208,10,10,https://reqres.in/api/users/7,397,0,189
+1791072166780,419,TX03 Get Profile,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-9,text,true,,2852,208,10,10,https://reqres.in/api/users/9,419,0,214
+1791072166757,442,TX03 Get Profile,200,OK,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-10,text,true,,2854,209,10,10,https://reqres.in/api/users/10,442,0,237
+1791072183399,220,TX04b Delete Profile,204,No Content,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-2,,true,,1942,230,10,10,https://reqres.in/api/users/1,0,0,0
+1791072022144,1355,TX00 Reqres User Journey,200,"Number of samples in transaction : 4, number of failing samples : 0",CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-2,,true,,9144,1011,10,10,null,1135,160121,553
+1791072183399,220,TX04a Logout,201,Created,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-1,text,true,,2506,276,10,10,https://reqres.in/api/users/2,220,0,0
+1791072022144,1353,TX00 Reqres User Journey,200,"Number of samples in transaction : 4, number of failing samples : 0",CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-1,,true,,9728,1057,10,10,null,1353,160411,551
+1791072189046,164,TX04b Delete Profile,204,No Content,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-3,,true,,1942,230,10,10,https://reqres.in/api/users/3,0,0,0
+1791072028166,995,TX00 Reqres User Journey,200,"Number of samples in transaction : 4, number of failing samples : 0",CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-3,,true,,9156,1005,10,10,null,831,160048,400
+1791072189039,172,TX04a Logout,201,Created,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-4,text,true,,2512,276,10,10,https://reqres.in/api/users/4,172,0,0
+1791072028168,1018,TX00 Reqres User Journey,200,"Number of samples in transaction : 4, number of failing samples : 0",CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-4,,true,,9714,1049,10,10,null,1018,160030,405
+1791072195067,154,TX04b Delete Profile,204,No Content,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-6,,true,,1930,230,10,10,https://reqres.in/api/users/6,0,0,0
+1791072034200,980,TX00 Reqres User Journey,200,"Number of samples in transaction : 4, number of failing samples : 0",CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-6,,true,,9153,1011,10,10,null,826,160041,354
+1791072195158,163,TX04a Logout,201,Created,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-5,text,true,,2502,276,10,10,https://reqres.in/api/users/5,163,0,0
+1791072034199,1089,TX00 Reqres User Journey,200,"Number of samples in transaction : 4, number of failing samples : 0",CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-5,,true,,9744,1061,10,10,null,1089,160040,403
+1791072201164,139,TX04b Delete Profile,204,No Content,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-7,,true,,1934,230,10,10,https://reqres.in/api/users/7,0,0,0
+1791072201144,159,TX04b Delete Profile,204,No Content,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-8,,true,,1926,230,10,10,https://reqres.in/api/users/8,0,0,0
+1791072040242,1019,TX00 Reqres User Journey,200,"Number of samples in transaction : 4, number of failing samples : 0",CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-7,,true,,9159,1015,10,10,null,879,160041,396
+1791072040242,1019,TX00 Reqres User Journey,200,"Number of samples in transaction : 4, number of failing samples : 0",CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-8,,true,,9152,1019,10,10,null,859,160041,396
+1791072207205,167,TX04a Logout,201,Created,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-9,text,true,,2401,276,10,10,https://reqres.in/api/users/9,167,0,0
+1791072046281,1052,TX00 Reqres User Journey,200,"Number of samples in transaction : 4, number of failing samples : 0",CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-9,,true,,9729,1057,10,10,null,1052,160045,401
+1791072207209,364,TX04b Delete Profile,204,No Content,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-10,,true,,1951,231,10,10,https://reqres.in/api/users/10,0,0,0
+1791072046282,1259,TX00 Reqres User Journey,200,"Number of samples in transaction : 4, number of failing samples : 0",CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-10,,true,,9277,1013,10,10,null,895,160030,430
+1791072223633,370,TX01 Register,429,Too Many Requests,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-2,text,false,Register must return 200,2672,288,10,10,https://reqres.in/api/register,370,0,240
+1791072183626,375,TX00 Reqres User Journey,,"Number of samples in transaction : 1, number of failing samples : 1",CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-2,,false,,2672,288,10,10,null,370,40007,240
+1791072223912,313,TX01 Register,429,Too Many Requests,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-1,text,false,Register must return 200,2679,288,9,9,https://reqres.in/api/register,313,0,191
+1791072183911,315,TX00 Reqres User Journey,,"Number of samples in transaction : 1, number of failing samples : 1",CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-1,,false,,2679,288,9,9,null,313,40001,191
+1791072229221,381,TX01 Register,429,Too Many Requests,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-4,text,false,Register must return 200,2687,284,8,8,https://reqres.in/api/register,381,0,245
+1791072189219,384,TX00 Reqres User Journey,,"Number of samples in transaction : 1, number of failing samples : 1",CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-4,,false,,2687,284,8,8,null,381,40002,245
+1791072229221,402,TX01 Register,429,Too Many Requests,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-3,text,false,Register must return 200,2674,285,7,7,https://reqres.in/api/register,402,0,245
+1791072189212,403,TX00 Reqres User Journey,,"Number of samples in transaction : 1, number of failing samples : 1",CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-3,,false,,2674,285,7,7,null,402,40009,245
+1791072235227,356,TX01 Register,429,Too Many Requests,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-6,text,false,Register must return 200,2674,290,6,6,https://reqres.in/api/register,356,0,216
+1791072195223,356,TX00 Reqres User Journey,,"Number of samples in transaction : 1, number of failing samples : 1",CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-6,,false,,2674,290,6,6,null,356,40004,216
+1791072235342,292,TX01 Register,429,Too Many Requests,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-5,text,false,Register must return 200,2666,288,5,5,https://reqres.in/api/register,292,0,182
+1791072195330,292,TX00 Reqres User Journey,,"Number of samples in transaction : 1, number of failing samples : 1",CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-5,,false,,2666,288,5,5,null,292,40012,182
+1791072241307,357,TX01 Register,429,Too Many Requests,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-8,text,false,Register must return 200,2670,292,4,4,https://reqres.in/api/register,357,0,236
+1791072241313,351,TX01 Register,429,Too Many Requests,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-7,text,false,Register must return 200,2676,290,4,4,https://reqres.in/api/register,351,0,230
+1791072201304,353,TX00 Reqres User Journey,,"Number of samples in transaction : 1, number of failing samples : 1",CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-7,,false,,2676,290,4,4,null,351,40009,230
+1791072201304,360,TX00 Reqres User Journey,,"Number of samples in transaction : 1, number of failing samples : 1",CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-8,,false,,2670,292,4,4,null,357,40003,236
+1791072247384,379,TX01 Register,429,Too Many Requests,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-9,text,false,Register must return 200,2674,288,2,2,https://reqres.in/api/register,379,0,250
+1791072207381,379,TX00 Reqres User Journey,,"Number of samples in transaction : 1, number of failing samples : 1",CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-9,,false,,2674,288,2,2,null,379,40003,250
+1791072247585,357,TX01 Register,429,Too Many Requests,CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-10,text,false,Register must return 200,2670,288,1,1,https://reqres.in/api/register,357,0,228
+1791072207574,359,TX00 Reqres User Journey,,"Number of samples in transaction : 1, number of failing samples : 1",CTG - 10 users / 30 s ramp / 5 steps-ThreadStarter 1-10,,false,,2670,288,1,1,null,357,40011,228
